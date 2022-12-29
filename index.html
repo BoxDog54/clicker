@@ -3,10 +3,10 @@
     
     <head>
 
-        <style>
+        <style type="text/css">
             *{
               margin: 0;
-              padding: 0;
+              padding: 32;
             }
             div{
               display: flex;
@@ -16,13 +16,19 @@
       
       
             }
+            .reset{
+                color: #ff0000;
+                font-weight: bold;
+            }
             button{
-              border: none;
-              cursor: pointer;
-              appearance: none;
-              background-color: inherit;
-               transition: transform .7s ease-in-out;
-              margin-left:16px;
+              
+                border: none;
+                cursor: pointer;
+                appearance: none;
+                background-color: inherit;
+                transition: transform .7s ease-in-out;
+                justify-content: center;
+                align-items: center;
       
             }
             button:hover{
@@ -30,21 +36,13 @@
       
             }
             img{
-              width: 128px;
-              height: 128px;
+              width: 256px;
+              height: 256px;
             }
-            input[type="email"]{
-              padding:10px;
-              border:2px solid #314de4;
-              outline :none;
-              border-radius:5px;
-              font-size:24px;
-              color:#314de4;
-            }
-            .text{
+            text{
               font-size:60px;
               color:#314de4;
-              font-family:Arial;
+              font-family:sans-serif;
             }
           </style>
 
@@ -153,16 +151,14 @@
     <title>Clicker Game</title>
 
     <body id="main">
-        <p id="numbah">Clicks = <span id="showClicks" class="number">0</span></p>
+        <div><p id="numbah">Clicks = <span id="showClicks" class="number">0</span></p>
         <p id="autoCPS"><span id="showCPS" class="number"></span></p>
-        <p id="manCPS"><span id="showCPC" class="number"></span></p>
+        <p id="manCPS"><span id="showCPC" class="number"></span></p></div>
         <div class="text"><button onclick="increment()" class="buyClicks"><img src="https://i.ibb.co/hmdZYNF/Untitled-1.png" alt="Untitled-1"></button></div>
-        <button onclick="reset()">Reset</button>
-        <br>
+        <div><button onclick="reset()"><span id="reset" class="reset">Reset</span></button>
         <button id="buyButton1" onclick="buyManual()">Buy More Clicks (100 Clicks)</button>
-        <br>
         <button id="buyButton" onclick="buyAuto()">Buy More CPS (10 Clicks)</button>
         <p id="clickVal">Next Click Value: <span id="showClick" class="number">5</span></p>
-        <p onclick="buyManual()" id="valCPS">Next CPS Value: <span id="showClick" class="number">1</span></p>
+        <p onclick="buyManual()" id="valCPS">Next CPS Value: <span id="showClick" class="number">1</span></p></div>
     </body>
 </html>
