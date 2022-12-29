@@ -83,8 +83,8 @@
                 inc1Mult = Math.floor((inc1Mult*1.6)/100)*100
                 document.getElementById("numbah").innerText = "Clicks = " + clicks;
                 document.getElementById("autoCPS").innerText = "CPS = " + clicksPerSecond;
-                document.getElementById("buyButton1").innerText = "Buy More CPS (" + price1 +" Clicks)";
-                document.getElementById("clickVal").innerText = "Next CPS Value: " + (clicksPerSecond )
+                document.getElementById("buyButton").innerText = "Buy More CPS (" + price1 +" Clicks)";
+                document.getElementById("valCPS").innerText = "Next CPS Value: " + (clicksPerSecond )
             } else {                
                 autoPoor();
               }
@@ -134,7 +134,7 @@
         <p id="numbah" class="title">Clicks = <span id="showClicks" class="number">0</span></p>
         <p id="autoCPS" class="title"><span id="showCPS"></span></p>
         <p id="manCPS" class="title"><span id="showCPC"></span></p>
-        <div class="text"><button onclick="increment()" class="buyClicks"><img src="https:/<button onclick="reset()"><span id="reset" class="reset">Reset</span></button>
+        <div><button onclick="increment()" class="buyClicks"><img src="https:/<button onclick="reset()"><span id="reset" class="reset">Reset</span></button>
         <button id="buyButton1" onclick="buyManual()">Buy More Clicks (100 Clicks)</button>
         <button id="buyButton" onclick="buyAuto()">Buy More CPS (10 Clicks)</button>
         <p id="clickVal">Next Click Value: <span id="showClick" class="number">5</span></p>
