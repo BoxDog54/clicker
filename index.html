@@ -25,7 +25,9 @@
         //Reset Function
         function reset() {
             let confirmation = prompt('Please type "Confirm" to reset.', "")
-            if (confirmation = "Confirm") {
+            if (confirmation != "Confirm") {
+                alert("Invalid response.")
+            } else {
                 document.getElementById("numbah").innerText = "Clicks = 0";
                 document.getElementById("showCPS").innerText = "";
                 document.getElementById("showCPC").innerText = "";
@@ -41,7 +43,7 @@
                 document.getElementById("buyButton1").innerText = "Buy More Clicks (100 Clicks)";
                 document.getElementById("valCPS").innerText = "Next CPS Value: 1"
                 document.getElementById("clickVal").innerText = "Next Click Value: 5"
-            } else alert("Invalid response.")
+            }
         }
         //Automatic Click Purchase Function
         function buyAuto() {
