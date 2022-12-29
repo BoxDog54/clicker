@@ -38,10 +38,10 @@
                 price2 = 100
                 inc2Mult = 100
                 document.getElementById("buyButton").innerText = "Buy More CPS (10 Clicks)";
-                document.getElementById("buyButton1").innerText = "Buy More CPS (100 Clicks)";
+                document.getElementById("buyButton1").innerText = "Buy More Clicks (100 Clicks)";
                 document.getElementById("valCPS").innerText = "Next CPS Value: 1"
                 document.getElementById("clickVal").innerText = "Next Click Value: 5"
-            }
+            } else alert("Invalid response.")
         }
         //Automatic Click Purchase Function
         function buyAuto() {
@@ -54,7 +54,7 @@
                 document.getElementById("showCPS").innerText = "CPS = " + clicksPerSecond;
                 document.getElementById("buyButton").innerText = "Buy More CPS (" + price1 +" Clicks)";
                 document.getElementById("valCPS").innerText = "Next CPS Value: " + (clicksPerSecond + inc1)
-            } else (alert("Not enough clicks!!"))
+            } else (alert("Not enough clicks!"))
         }
         //Click Multiplier Function
         function buyManual() {
@@ -68,7 +68,7 @@
                 document.getElementById("showCPC").innerText = "Clicks = " + clicksPerClick;
                 document.getElementById("buyButton1").innerText = "Buy More Clicks (" + price2 +" Clicks)";
                 document.getElementById("clickVal").innerText = "Next Click Value: " + (5 + inc2)
-            } else (alert("Not enough clicks!!"))
+            } else alert("Not enough clicks!!")
         }
         //Win Function
         setInterval(function() {
