@@ -73,30 +73,6 @@
             clicks += clicksPerSecond;
             document.getElementById("numbah").innerText = "Clicks = " + clicks;
         }, 1000) 
-
-        //Reset Function
-        function reset() {
-            let confirmation = prompt('Please type "Confirm" to reset.', "")
-            if (confirmation != "Confirm") {
-                alert("Invalid response.")
-            } else {
-                document.getElementById("numbah").innerText = "Clicks = 0";
-                document.getElementById("showCPS").innerText = "";
-                document.getElementById("showCPC").innerText = "";
-                clicks = 0
-                clicksPerSecond = 0
-                clicksPerClick = 1
-                inc1 = 1
-                inc2 = 0
-                price1 = 10
-                price2 = 100
-                inc2Mult = 100
-                document.getElementById("buyButton").innerText = "Buy More CPS (10 Clicks)";
-                document.getElementById("buyButton1").innerText = "Buy More Clicks (100 Clicks)";
-                document.getElementById("valCPS").innerText = "Next CPS Value: 1"
-                document.getElementById("clickVal").innerText = "Next Click Value: 5"
-            }
-        }
         //Automatic Click Purchase Function
         function buyAuto() {
             if (clicks >= price1){
