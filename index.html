@@ -50,7 +50,7 @@
         function buyAuto() {
             if (clicks >= price1){
                 clicks = clicks - price1;
-                price1 = price1 + inc1*inc2mult
+                price1 = price1 + inc1*inc1mult
                 clicksPerSecond = clicksPerSecond + inc1
                 inc1 = inc1 + 2
                 inc1Mult = Math.ceil((inc1Mult*1.6)/100)*100
@@ -59,8 +59,9 @@
                 document.getElementById("buyButton").innerText = "Buy More CPS (" + price1 +" Clicks)";
                 document.getElementById("valCPS").innerText = "Next CPS Value: " + (clicksPerSecond + inc1)
             } else {
+                setTimeout(document.getElementById("buyButton").innerText = "Buy More CPS (" + price1 +" Clicks)", 3500)
                 document.getElementById("buyButton").innerText = "Not Enough Clicks!"
-                document.getElementById("buyButton").innerText = "Buy More CPS (" + price1 +" Clicks)", 3500
+
               }
         }
         //Click Multiplier Function
@@ -76,8 +77,8 @@
                 document.getElementById("buyButton1").innerText = "Buy More Clicks (" + price2 +" Clicks)";
                 document.getElementById("clickVal").innerText = "Next Click Value: " + (5 + inc2)
             } else {
-                document.getElementById("buyButton1").innerText = "Not Enough Clicks!";
-                setTimeout(document.getElementById("buyButton1").innerText = "Buy More Clicks (" + price2 +" Clicks)", 3500);
+                setTimeout(document.getElementById("buyButton1").innerText = "Buy More Clicks! (" + price2 +" Clicks)", 3500)
+                document.getElementById("buyButton").innerText = "Not Enough Clicks!"
               }
         }
     </script>
