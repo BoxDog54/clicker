@@ -6,13 +6,13 @@
         <style type="text/css">
             *{
               margin: 0;
-              padding: 32;
+              padding: 100;
             }
             div{
               display: flex;
               justify-content: center;
               align-items: center;
-              margin:40px;
+              margin: 32px;
       
       
             }
@@ -39,10 +39,13 @@
               width: 256px;
               height: 256px;
             }
-            text{
-              font-size:60px;
-              color:#314de4;
+            .title{
+              font-size:32px;
+              color:#000000;
               font-family:sans-serif;
+              justify-content: center;
+              align-items: center;
+              margin: 16px;
             }
           </style>
 
@@ -67,9 +70,10 @@
         }
         //Automatic Click Function
         setInterval(function() {
-                clicks += clicksPerSecond;
+            clicks += clicksPerSecond;
             document.getElementById("numbah").innerText = "Clicks = " + clicks;
         }, 1000) 
+
         //Reset Function
         function reset() {
             let confirmation = prompt('Please type "Confirm" to reset.', "")
@@ -97,14 +101,14 @@
         function buyAuto() {
             if (clicks >= price1){
                 clicks = clicks - price1;
-                price1 = price1 + inc1*inc1mult
+                price1 = price1 + inc1*inc1Mult
                 clicksPerSecond = clicksPerSecond + inc1
-                inc1 = inc1 + 2
-                inc1Mult = Math.ceil((inc1Mult*1.6)/100)*100
+                inc1 = Math.floor(inc1 + 2)
+                inc1Mult = Math.floor((inc1Mult*1.6)/100)*100
                 document.getElementById("numbah").innerText = "Clicks = " + clicks;
-                document.getElementById("showCPS").innerText = "CPS = " + clicksPerSecond;
-                document.getElementById("buyButton").innerText = "Buy More CPS (" + price1 +" Clicks)";
-                document.getElementById("valCPS").innerText = "Next CPS Value: " + (clicksPerSecond + inc1)
+                document.getElementById("autoCPS").innerText = "CPS = " + clicksPerSecond;
+                document.getElementById("buyButton1").innerText = "Buy More CPS (" + price1 +" Clicks)";
+                document.getElementById("clickVal").innerText = "Next CPS Value: " + (clicksPerSecond )
             } else {                
                 autoPoor();
               }
@@ -118,7 +122,7 @@
                 inc2 = inc2 + 5
                 inc2Mult = Math.floor((inc2Mult*1.25)/100)*100
                 document.getElementById("numbah").innerText = "Clicks = " + clicks;
-                document.getElementById("showCPC").innerText = "Clicks = " + clicksPerClick;
+                document.getElementById("manCPS").innerText = "Clicks = " + clicksPerClick;
                 document.getElementById("buyButton1").innerText = "Buy More Clicks (" + price2 +" Clicks)";
                 document.getElementById("clickVal").innerText = "Next Click Value: " + (5 + inc2)
             } else {
@@ -151,9 +155,9 @@
     <title>Clicker Game</title>
 
     <body id="main">
-        <div><p id="numbah">Clicks = <span id="showClicks" class="number">0</span></p>
-        <p id="autoCPS"><span id="showCPS" class="number"></span></p>
-        <p id="manCPS"><span id="showCPC" class="number"></span></p></div>
+        <p id="numbah" class="title">Clicks = <span id="showClicks" class="number">0</span></p>
+        <p id="autoCPS" class="title"><span id="showCPS"></span></p>
+        <p id="manCPS" class="title"><span id="showCPC"></span></p>
         <div class="text"><button onclick="increment()" class="buyClicks"><img src="https://i.ibb.co/hmdZYNF/Untitled-1.png" alt="Untitled-1"></button></div>
         <div><button onclick="reset()"><span id="reset" class="reset">Reset</span></button>
         <button id="buyButton1" onclick="buyManual()">Buy More Clicks (100 Clicks)</button>
