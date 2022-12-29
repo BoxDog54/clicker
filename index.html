@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html> 
     
     <script type="text/javascript">
-
+        //Variables
         let clicks = 0; 
         let clicksPerSecond = 0;
         let clicksPerClick = 1;
@@ -13,37 +12,38 @@
         let inc2 = 0;
         let inc2Mult = 100;
         let price2 = 100;
-
+        //Click Function
         function increment() {
             clicks += clicksPerClick;
             document.getElementById("numbah").innerText = "Clicks = " + clicks;
         }
-
-
+        //Automatic Click Function
         setInterval(function() {
-            clicks += clicksPerSecond; 
-            
-            document.getElementById("numbah").innerText = "Clicks = " + clicks; 
+                clicks += clicksPerSecond;
+            document.getElementById("numbah").innerText = "Clicks = " + clicks;
         }, 1000) 
-
+        //Reset Function
         function reset() {
-            document.getElementById("numbah").innerText = "Clicks = 0";
-            document.getElementById("showCPS").innerText = "";
-            document.getElementById("showCPC").innerText = "";
-            clicks = 0
-            clicksPerSecond = 0
-            clicksPerClick = 1
-            inc1 = 1
-            inc2 = 0
-            price1 = 10
-            price2 = 100
-            inc2Mult = 100
-            document.getElementById("buyButton").innerText = "Buy More CPS (10 Clicks)";
-            document.getElementById("buyButton1").innerText = "Buy More CPS (100 Clicks)";
-            document.getElementById("valCPS").innerText = "Next CPS Value: 1"
-            document.getElementById("clickVal").innerText = "Next Click Value: 5"
+            let confirmation = prompt('Please type "Confirm" to reset.', "")
+            if (confirmation = "Confirm") {
+                document.getElementById("numbah").innerText = "Clicks = 0";
+                document.getElementById("showCPS").innerText = "";
+                document.getElementById("showCPC").innerText = "";
+                clicks = 0
+                clicksPerSecond = 0
+                clicksPerClick = 1
+                inc1 = 1
+                inc2 = 0
+                price1 = 10
+                price2 = 100
+                inc2Mult = 100
+                document.getElementById("buyButton").innerText = "Buy More CPS (10 Clicks)";
+                document.getElementById("buyButton1").innerText = "Buy More CPS (100 Clicks)";
+                document.getElementById("valCPS").innerText = "Next CPS Value: 1"
+                document.getElementById("clickVal").innerText = "Next Click Value: 5"
+            }
         }
-
+        //Automatic Click Purchase Function
         function buyAuto() {
             if (clicks >= price1){
                 clicks = clicks - price1;
@@ -56,7 +56,7 @@
                 document.getElementById("valCPS").innerText = "Next CPS Value: " + (clicksPerSecond + inc1)
             } else (alert("Not enough clicks!!"))
         }
-
+        //Click Multiplier Function
         function buyManual() {
             if (clicks >= price2){
                 clicks = clicks - price2;
@@ -67,10 +67,10 @@
                 document.getElementById("numbah").innerText = "Clicks = " + clicks;
                 document.getElementById("showCPC").innerText = "Clicks = " + clicksPerClick;
                 document.getElementById("buyButton1").innerText = "Buy More Clicks (" + price2 +" Clicks)";
-                document.getElementById("clickVal").innerText = "Next Click Value: " + (clicksPerClick + inc2)
+                document.getElementById("clickVal").innerText = "Next Click Value: " + (5 + inc2)
             } else (alert("Not enough clicks!!"))
         }
-
+        //Win Function
         setInterval(function() {
             if(clicks > 1000000){
                 document.getElementById("main").innerText = "Congratulations!! You Win!"
