@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html> 
     
+    <head>
+
+    </head>    
+
     <script type="text/javascript">
         //Variables
         let clicks = 0; 
@@ -59,7 +63,7 @@
                 document.getElementById("buyButton").innerText = "Buy More CPS (" + price1 +" Clicks)";
                 document.getElementById("valCPS").innerText = "Next CPS Value: " + (clicksPerSecond + inc1)
             } else {
-                setTimeout(document.getElementById("buyButton").innerText = "Buy More CPS (" + price1 +" Clicks)", 3500)
+                setTimeout((document.getElementById("buyButton").innerText = "Buy More CPS (" + price1 +" Clicks)"), 3500)
                 document.getElementById("buyButton").innerText = "Not Enough Clicks!"
 
               }
@@ -77,8 +81,8 @@
                 document.getElementById("buyButton1").innerText = "Buy More Clicks (" + price2 +" Clicks)";
                 document.getElementById("clickVal").innerText = "Next Click Value: " + (5 + inc2)
             } else {
-                setTimeout(document.getElementById("buyButton1").innerText = "Buy More Clicks! (" + price2 +" Clicks)", 3500)
-                document.getElementById("buyButton").innerText = "Not Enough Clicks!"
+                setTimeout((document.getElementById("buyButton1").innerText = "Buy More Clicks! (" + price2 +" Clicks)"), 3500)
+                document.getElementById("buyButton1").innerText = "Not Enough Clicks!"
               }
         }
     </script>
@@ -89,6 +93,7 @@
         <p id="numbah">Clicks = <span id="showClicks" class="number">0</span></p>
         <p id="autoCPS"><span id="showCPS" class="number"></span></p>
         <p id="manCPS"><span id="showCPC" class="number"></span></p>
+        <div class="text" img="Untitled-1.png">Subscribe To Newsletter</div>
         <button onclick="increment()" class="buyClicks">Click</button> 
         <button onclick="reset()">Reset</button>
         <br>
